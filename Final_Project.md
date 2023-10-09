@@ -4,8 +4,7 @@ by **Gabriela Moravčíková, Terézia Blihárová, Emma Fössing**
 ## Table of contents 
 
 1. [Introduction](#introduction)
-2. [Rebasing](#rebasing)
-    [General idea](#generalidea)
+2. [Rebasing](#rebasing)   
 3. [Cherry-Picking](#cherry-picking)
 4. [Sources](#sources)
 
