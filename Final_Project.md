@@ -20,4 +20,6 @@ Rebasing and cherry-picking are tools used by repository maintainers instead of 
 ## Cherry-Picking
 ### General idea of it
 ### Example
+![After cherry picking](/Users/gabrielamoravcikova/project/Version_Control_Project)
+
 ### Advantage
