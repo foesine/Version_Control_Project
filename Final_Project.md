@@ -5,6 +5,7 @@ by **Gabriela Moravčíková, Terézia Blihárová, Emma Fössing**
 
 1. [Introduction](#introduction)
 2. [Rebasing](#rebasing)
+    [General idea](#generalidea)
 3. [Cherry-Picking](#cherry-picking)
 4. [Sources](#sources)
 
