@@ -2,7 +2,6 @@
 by **Gabriela Moravčíková, Terézia Blihárová, Emma Fössing**
 
 ## Table of contents 
-
 1. [Introduction](#introduction)
 2. [Rebasing](#rebasing)   
 3. [Cherry-Picking](#cherry-picking)
@@ -10,16 +9,25 @@ by **Gabriela Moravčíková, Terézia Blihárová, Emma Fössing**
 
 
 ## Introduction
-Rebasing and cherry-picking are tools used by repository maintainers instead of merging branches from other contributers. The main advantage it has to the classical merge is the ability to maintain a mostly linear history.
+Rebasing and cherry-picking come to use when the work was diveraged and branches were created. They are tools used by repository maintainers instead of merging branches from other contributers. The main advantage it has to the classical merge is the ability to maintain a mostly linear history.
 
 ## Rebasing
 ### General idea of it
 ### Example
 ### Advantage
 
+<<<<<<< HEAD
 ## Cherry-Picking
 ### General idea of it
 ### Example
 ![After cherry picking](/Users/gabrielamoravcikova/project/Version_Control_Project)
 
 ### Advantage
+=======
+# Cherry-Picking
+## General idea of it
+## Example
+## Advantage
+
+# Sources
+>>>>>>> 376049057c2950ff88177c1d14d8e2cb38886473
