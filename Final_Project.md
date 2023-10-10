@@ -20,14 +20,8 @@ Rebasing and cherry-picking come to use when the work was diveraged and branches
 ## Cherry-Picking
 ### General idea of it
 ### Example
-![After cherry picking](/Users/gabrielamoravcikova/project/Version_Control_Project)
+
 
 ### Advantage
 =======
-# Cherry-Picking
-## General idea of it
-## Example
-## Advantage
 
-# Sources
->>>>>>> 376049057c2950ff88177c1d14d8e2cb38886473
