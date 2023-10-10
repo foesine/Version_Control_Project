@@ -18,6 +18,7 @@ The rebase command finds the common anchestor of the two branches and finds the 
 
 There will not be any difference between the files after the rebasing or the applying of the ```merge``` command. Only the git history will be different as the log history looks linear. 
 
+### Where it gets more exciting
 There are some additional arguments that can be applied to the ```rebase``` command. 
 Running ``` git rebase [basebranch] [topicbranch]``` the topicbranch does not have to be checked out first.
 If there are multiple branches and the topicbranch does not have a direct common anchestor with the basebranch as it is branching out from a further branch, then ```--onto``` can be used.
