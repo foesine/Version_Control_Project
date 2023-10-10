@@ -23,9 +23,10 @@ There are some additional arguments that can be applied to the
 
 ### Advantage
 
-# Cherry-Picking
-## General idea of it
-## Example
-## Advantage
+## Cherry-Picking
+### General idea of it
+Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. 
+### Example
+### Advantage
 
-# Sources
+
