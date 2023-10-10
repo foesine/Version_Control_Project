@@ -1,0 +1,7 @@
+Cherry-pick 
+
+- linear history 
+- to introduce work from one branch to another 
+- rebase for a single commit 
+- it takes the patch that was introduced in a commit and tries to reapply it on the branch you're currently on 
+- useful if you have a number of commits on a topic branch and you want to integrate only one of them, or if you only have one commit on a topic branch and you'd prefer to cherry-pick it rather than run rebase 
