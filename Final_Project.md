@@ -16,12 +16,10 @@ Rebasing and cherry-picking come to use when the work was diveraged and branches
 ### Example
 ### Advantage
 
-<<<<<<< HEAD
 ## Cherry-Picking
 ### General idea of it
+Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. 
 ### Example
-
-
 ### Advantage
-=======
+
 
