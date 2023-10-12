@@ -52,8 +52,8 @@ And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), wh
 Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them. We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. 
 ### Example
 ### Visual Representation 
-![.](./pictures/rebasing_topic_off_another_topic.png)
-bla bla 
+![.](./pictures/cherry.png)
+ 
 ### Advantage
 
 
