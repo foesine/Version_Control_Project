@@ -13,20 +13,18 @@ Rebasing and cherry-picking come to use when the work has diverged and branches 
 
 ## Rebasing
 ### General idea of it
-The ```git rebase <branchname>``` command takes all the commits of the currently checked out branch and applies them on another, usually the master branch, which has to be specified in the command.
-The rebase command finds the common anchestor of the two branches and finds the differences to this made on the seperate (new) branch with each commit. These are temporarily stored, the current branch is then reset to the same commit as the branch that will be rebased on and then the changes are applied. To have a clear linear commit history and the pointers to both point at the same commit, the old branch has to be checked out and then a fast-forwad merge can be applied.
-
-There are some additional arguments that can be applied to the 
-
 ### Example
+### When to use it 
 
 
-### Advantage
 
-## Cherry-Picking
-### General idea of it
-Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. 
-### Example
-### Advantage
+# Cherry-Picking
+## General idea of it
+## Example
+## When to use it 
+Cherry-picking while interesting feature is an option that needs to find a proper place to be used. There are few possible uses for this command such as for exemple work in teams where tight collaboration is in place. Cherry-picking enables workers to pick a selected commit and proceed with only certain changes. 
+Other possible use for cherry-picking is when bug needs to be fixed. This command makes the process of the fixes easier in a way, that the new commit can be cherry-picked right onto main branch, before more damage is done.
+Last but not least undoing certain changes or restoring lost commits can be provided by the use of cherry-picking. Using other git comands and the knowledge that git stores these data still we can revive 
 
 
+# Sources
