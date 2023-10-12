@@ -12,11 +12,6 @@ by **Gabriela Moravčíková, Terézia Blihárová, Emma Fössing**
 Rebasing and cherry-picking come to use when the work has diverged and branches were created. They are tools used by repository maintainers instead of merging branches from other contributers. The main advantage it has to the classical merge is the ability to maintain a mostly linear history ([Chacon & Straub, 2014](#pro-git-book)).
 
 ## Rebasing
-### General idea of it
-<<<<<<< HEAD
-### Example
-### When to use it 
-=======
 The ```git rebase [basebranch]``` command takes all the commits of the currently checked out branch (topicbranch) and applies them on the basebranch, usually the master branch, which has to be specified in the command.
 The rebase command finds the common anchestor of the two branches and finds the differences to this made on the topicbranch with each commit. These are temporarily stored, the topicbranch is then reset to the same commit as the basebranch and then the changes are applied to the basebranch. To have a clear linear commit history and the pointers to both point at the same commit, the basebranch has to be checked out and then a fast-forwad merge can be applied ([Chacon & Straub, 2014](#pro-git-book)).
 
@@ -52,6 +47,8 @@ If there are multiple branches and the topicbranch does not have a direct common
 This is the same as ```git reset --hard [upstream]```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
 
 And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), which follows the same idea and a good tool for more picky maintainers.
+### When to use it 
+Rebasing in the end product is not that different from the basic merge command. One of the biggest advantages of the rebasing is that it makes for a cleaner commit history. 
 
 ## Cherry-Picking
 ### General idea of it
@@ -74,7 +71,7 @@ Other possible use for cherry-picking is when some mistakes, in other words "bug
 Last but not least undoing certain changes or restoring lost commits can be provided by the use of cherry-picking. Using other git comands and the knowledge that git stores these data we can easily revive the data. 
 
 ### When to not use it
-As glamurous as it sounds, there are some things that needs to be taken into consideration while cherry-picking. Cherry-picking essetially creates two copies of one commit. That being said, if one of the branches with the commit gets modified, it can lead to a bigger future problem when somebody would try to merge the two branches. 
+As glamurous as it sounds, there are some things that needs to be taken into consideration while cherry-picking. Cherry-picking essetially creates two copies of one commit. That being said, if one of the branches with the commit gets modified, it can lead to a bigger future problem with somebody's trying to merge the two branches. 
 
 ## Sources
 - <a id="cherry picking of code commits"></a>Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
