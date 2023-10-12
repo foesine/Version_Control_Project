@@ -65,10 +65,13 @@ Each <commit-hash> represents the SHA-1 hash of the commit we want to apply. Add
 We can also cherry-pick multiple commits. To do so, after the ``` git cherry-pick``` command we list their commit hashes sequentially : ``` git cherry-pick <commit-hash-1> <commit-hash-2> <commit-hash-3> ```
  
 
-### When to do use it 
-Cherry-picking whilst interesting feature is a practice that needs to find a proper place to be used. There are few possible uses for this command such as -for exemple-  work in teams where tight collaboration needs to take place. Cherry-picking enables workers to pick a selected commit and proceed with only certain changes. 
-Other possible use for cherry-picking is when some mistakes, in other words "bugs" needs to be fixed. This command makes the process of the fixes easier in a way, that the new commit can be cherry-picked right onto main branch, before more damage is done.
+### When to use it 
+Cherry-picking whilst interesting feature is a practice that needs to find a proper place to be used. There are few possible uses for this command such as -for exemple-  work in teams where tight collaboration needs to take place. Cherry-picking enables workers to pick a selected commit and proceed with only certain changes. This can be usefull for exemple when accidentaly making changes to a wrong branch.
+Other possible use for cherry-picking is when some mistakes, in other words "bugs" needs to be fixed. This command makes the process of the fixes easier in a way, that it combines multiple git commands such as git show and process of committing and checking out and going from one branch to another to fix the problems into one singe cherry-pick commit.
 Last but not least undoing certain changes or restoring lost commits can be provided by the use of cherry-picking. Using other git comands and the knowledge that git stores these data we can easily revive the data. 
+
+### When to not use it
+As glamurous as it sounds, there are some things that needs to be taken into consideration while cherry-picking. Cherry-picking essetially creates two copies of one commit. That being said, if one of the branches with the commit gets modified, it can lead to a bigger future problem when somebody would try to merge the two branches. 
 
 ## Sources
 - <a id="cherry picking of code commits"></a>Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
