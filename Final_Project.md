@@ -13,10 +13,10 @@ Rebasing and cherry-picking come to use when the work has diverged and branches 
 
 ## Rebasing
 ### General idea of it
-<<<<<<< HEAD
+
 ### Example
 ### When to use it 
-=======
+
 The ```git rebase [basebranch]``` command takes all the commits of the currently checked out branch (topicbranch) and applies them on the basebranch, usually the master branch, which has to be specified in the command.
 The rebase command finds the common anchestor of the two branches and finds the differences to this made on the topicbranch with each commit. These are temporarily stored, the topicbranch is then reset to the same commit as the basebranch and then the changes are applied to the basebranch. To have a clear linear commit history and the pointers to both point at the same commit, the basebranch has to be checked out and then a fast-forwad merge can be applied ([Chacon & Straub, 2014](#pro-git-book)).
 
@@ -44,6 +44,7 @@ Problematic commits will cause git to report a merge conflict which can be resol
 After a topicbranch was rebased, the information is integrated on the basebranch and if the topicbranch is not used anymore it can be deleted with ```git branch -d [topicbranch]```.
 
 If there are multiple branches and the topicbranch does not have a direct common anchestor with the basebranch as it is branching out from a further branch, then ```--onto``` can be used ([Chacon & Straub, 2014](#pro-git-book)).
+
 #### Visual representation
 ![.](./pictures/rebasing_topic_off_another_topic.png)<br>
 *<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.71</font>* <br>
