@@ -56,21 +56,17 @@ And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), wh
 
 ## Cherry-Picking
 ### General idea of it
-Both ```git rebase``` and ```git cherry-pick``` are  commands used to rewrite the commits of one branch on top of another ([Geeks for Geeks: Git cherry-pick](#geeks)). Cherry-picking includes manually picking commits from one branch and introduce them to another branch ([Bunyakiati & Phipathananunth, 2017](#cherry_picking_code_commits)). This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them.  We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on ([Chacon & Straub, 2014](#pro-git-book)). 
+Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them.  We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. This approach is in contrast to other methods, such as previously mentioned rebasing or merging, which typically involve the integration of multiple commits into another branch.
 ### Visual Representation 
 We suppose our project looks as following: <br>
 ![History before cherry pick](./pictures/cherry.png)<br>
-*<font size="1"> Picture from : [Chacon & Straub, 2014, p.127](#pro-git-book) </font>*  <br>
 Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit hash> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like the following: <br>
-![History after cherry-picking a commit on a topic branch](./pictures/after_cherry.png)<br> 
-*<font size="1"> Picture from : [Chacon & Straub, 2014, p.127](#pro-git-book) </font>*
+![History after cherry-picking a commit on a topic branch](./pictures/after_cherry.png)<br>
 
-Each ```<commit-hash>``` represents the SHA-1 hash of the commit we want to apply. Additionally, while using this command, we have to make sure we are on the branch we want to apply the commit to. 
+Each <commit-hash> represents the SHA-1 hash of the commit we want to apply. Additionally, while using this command, we have to make sure we are on the branch we want to apply the commit to. 
 
 ### Options 
-We can also cherry-pick multiple commits. To do so, after the ``` git cherry-pick``` command we list the commit hashes sequentially: ``` git cherry-pick <commit-hash-1> <commit-hash-2> <commit-hash-3> ```<br> 
-Another usefull option is ```-e``` or ```--edit``` when we want to edit the commit message of a cherry-picked commit prior to commiting.
-
+We can also cherry-pick multiple commits. To do so, after the ``` git cherry-pick``` command we list their commit hashes sequentially : ``` git cherry-pick <commit-hash-1> <commit-hash-2> <commit-hash-3> ```
  
 
 ### When to use it 
@@ -82,13 +78,13 @@ Last but not least undoing certain changes or restoring lost commits can be prov
 As glamurous as it sounds, there are some things that needs to be taken into consideration while cherry-picking. Cherry-picking essetially creates two copies of one commit. That being said, if one of the branches with the commit gets modified, it can lead to a bigger future problem when somebody would try to merge the two branches. 
 
 ## Sources
-- <a id="cherry_picking_code_commits"></a>Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
+- <a id="cherry picking of code commits"></a>Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
 
 - <a id="pro-git-book"></a> Chacon, S., & Straub, B. (2014). *Pro git*. Springer Nature.
 
 - <a id="git-scm2"></a> Git-cherry-pick documentation. https://git-scm.com/docs/git-cherry-pick; retrieved on 12/10/2023.
 
-- <a id="geeks"></a> Geeks for Geeks: Git-cherry-pick. https://www.geeksforgeeks.org/git-cherry-pick/; retrieved on 12/10/2023.
+- <a id="geeks"></a> Git-cherry-pick. https://www.geeksforgeeks.org/git-cherry-pick/; retrieved on 12/10/2023.
 
 - <a id="git-scm"></a> Git-rebase documentation. https://git-scm.com/docs/git-rebase; retrieved on 11/10/2023.
 
