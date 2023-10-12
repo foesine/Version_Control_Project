@@ -75,12 +75,14 @@ For more  details about additional options available for the cherry-pick command
  
 
 ### When to use it 
-Cherry-picking whilst interesting feature requires thoughtful application. There are many possible uses for this command such as -for exemple-  work in team environments where precise coordination is essential. Cherry-picking enables workers to select specific commitsand incorporate only the necessary changes. For instance, this practice can be usefull when rectifying accidental changes made to a wrong branch.
-Another helpful application of ```git cherry-pick ``` is error correction, specifically adressing "bugs". This command makes the process of the fixes easier in a way, that it combines multiple git commands such as ```git show ```, committing process and branch switching into one single comand.
-Lastly, undoing certain changes or restoring lost commits can be also a useful function of cherry-pick comand.  
+Cherry-picking whilst interesting feature requires thoughtful application. There are many possible uses for this command such as -for exemple-  work in team environments where precise coordination is essential. Cherry-picking enables workers to select specific commits and incorporate only the necessary changes. For instance, this practice can be usefull when rectifying accidental changes made to a wrong branch. ([Git-cherry-pick](#geeks))
+Another helpful application of ```git cherry-pick ``` is error correction, specifically adressing "bugs". This command makes the process of the fixes easier in a way, that it combines multiple git commands such as ```git show ```, committing process and branch switching into one single comand.Lastly, undoing certain changes or restoring lost commits can be also a useful function of cherry-pick comand. ([Git cherry pick](#Atlassian))
 
 ### When to not use it
-As glamurous as it sounds, there are some things that needs to be taken into consideration while cherry-picking. Cherry-picking essetially creates two copies of one commit. That being said, if one of the branches with the commit gets modified, it can lead to a bigger future problem with somebody's trying to merge the two branches. 
+As appealing as it may seem, there are ertain limitations to ```git cherry-pick``` command. Cherry-picking essetially creates two copies of the same commit. That being said, if one of the branches with the commit gets modified, it can potentially create challenges when attempting to merge these two branches in the future.  This issue might cause problems, especially while working on collaborative team projects,  thus highlighting that the very advantage of this command can be considered a drawback. ([Chen,2018](#devblogs))
+
+## Discussion and Conclusion
+
 
 
 ## Sources
@@ -95,5 +97,10 @@ As glamurous as it sounds, there are some things that needs to be taken into con
 - <a id="git-scm"></a> Git-rebase documentation. https://git-scm.com/docs/git-rebase; retrieved on 11/10/2023.
 
 - Perschbacher,B. (2010) *Hopefully Interesting Git Topics.*
+
+- <a id="atlassian"></a> Git cherry pick. https://www.atlassian.com/git/tutorials/cherry-pick; retrieved on 11.10.2023.
+
+- <a id="devblogs"></a> Chen, R.(2018). *Stop cherry-picking, start merging, Part 1: The merge conflict.* In The Old New Thing. https://devblogs.microsoft.com/oldnewthing/20180312-00/?p=98215
+
 
 
