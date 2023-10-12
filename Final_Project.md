@@ -17,7 +17,7 @@ Rebasing and cherry-picking come to use when the work has diverged and branches 
 ### Example
 ### When to use it 
 
-The ```git rebase [basebranch]``` command takes all the commits of the currently checked out branch (topicbranch) and applies them on the basebranch, usually the master branch, which has to be specified in the command.
+The ```git rebase <basebranch>``` command takes all the commits of the currently checked out branch (topicbranch) and applies them on the basebranch, usually the master branch, which has to be specified in the command.
 The rebase command finds the common anchestor of the two branches and finds the differences to this made on the topicbranch with each commit. These are temporarily stored, the topicbranch is then reset to the same commit as the basebranch and then the changes are applied to the basebranch. To have a clear linear commit history and the pointers to both point at the same commit, the basebranch has to be checked out and then a fast-forwad merge can be applied ([Chacon & Straub, 2014](#pro-git-book)).
 
 #### Visual representation
@@ -39,9 +39,9 @@ A neccessity for rebasing is to have a branch checked out and a configured upstr
 
 
 There are some additional arguments that can be applied to the ```rebase``` command. <br>
-Running ``` git rebase [basebranch] [topicbranch]``` the topicbranch does not have to be checked out initially. <br>
+Running ``` git rebase <basebranch> <topicbranch>``` the topicbranch does not have to be checked out initially. <br>
 Problematic commits will cause git to report a merge conflict which can be resolved manually and then one has the option to ```rebase --continue``` or ```rebase --abort``` ([Git-rebase documentation](#git-scm)). <br>
-After a topicbranch was rebased, the information is integrated on the basebranch and if the topicbranch is not used anymore it can be deleted with ```git branch -d [topicbranch]```.
+After a topicbranch was rebased, the information is integrated on the basebranch and if the topicbranch is not used anymore it can be deleted with ```git branch -d <topicbranch>```.
 
 If there are multiple branches and the topicbranch does not have a direct common anchestor with the basebranch as it is branching out from a further branch, then ```--onto``` can be used ([Chacon & Straub, 2014](#pro-git-book)).
 
@@ -50,7 +50,7 @@ If there are multiple branches and the topicbranch does not have a direct common
 *<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.71</font>* <br>
 *This is the client branch (commits C8 and C9) rebased onto the master branch (commits C8' and C9'). The command used for this is  ```git rebase --onto master server client``` ([Chacon & Straub, 2014](#pro-git-book))*. <br>
 
-This is the same as ```git reset --hard [upstream]```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
+This is the same as ```git reset --hard <upstream>```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
 
 And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), which follows the same idea and a good tool for more picky maintainers.
 
