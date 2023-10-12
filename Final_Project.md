@@ -22,12 +22,15 @@ The rebase command finds the common anchestor of the two branches and finds the 
 
 #### Visual representation
 ![.](./pictures/diverged_work_history.png)<br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.69</font>* <br>
 *This is what the initial situation might look like. C4 was commited on a seperate branch and now it should be applied to the master branch.* <br>
 
 ![.](./pictures/basic_rebase.png)<br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.69</font>* <br>
 *This is what the situation looks like after running the rebase command* <br>
 
 ![.](./pictures/basic_rebase_after_merge_ff.png) <br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.70</font>* <br>
 *This is the final history after the merge fast-forward.* <br>
 
 There will not be any difference between the files after the rebasing or the applying of the ```merge``` command. Only the git history will be different as the log history looks linear ([Chacon & Straub, 2014](#pro-git-book)). 
@@ -43,13 +46,13 @@ After a topicbranch was rebased, the information is integrated on the basebranch
 If there are multiple branches and the topicbranch does not have a direct common anchestor with the basebranch as it is branching out from a further branch, then ```--onto``` can be used ([Chacon & Straub, 2014](#pro-git-book)).
 #### Visual representation
 ![.](./pictures/rebasing_topic_off_another_topic.png)<br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.71</font>* <br>
 *This is the client branch (commits C8 and C9) rebased onto the master branch (commits C8' and C9'). The command used for this is  ```git rebase --onto master server client``` ([Chacon & Straub, 2014](#pro-git-book))*. <br>
 
 This is the same as ```git reset --hard [upstream]```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
 
 And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), which follows the same idea and a good tool for more picky maintainers.
 
-=======
 ## Cherry-Picking
 ### General idea of it
 Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them.  We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. This approach is in contrast to other methods, such as previously mentioned rebasing or merging, which typically involve the integration of multiple commits into another branch.
