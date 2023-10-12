@@ -50,14 +50,14 @@ And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), wh
 ## Cherry-Picking
 ### General idea of it
 Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them. We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. 
-### Example
 ### Visual Representation 
 We suppose our project looks as following: 
 ![History before cherry pick](./pictures/cherry.png)
-Now, if we want to pull the commit e43a6 into our master branch we can use ``` git cherry-pick e43a6... ``` , which pulls the same change introduced in e43a6, but we get a new commit SHA-1 value. 
+*Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit ID> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like following : 
 ![History after cherry-picking a commit on a topic branch](./pictures/after_cherry.png)
 
- 
+### Options 
+
 ### Advantage
 
 
