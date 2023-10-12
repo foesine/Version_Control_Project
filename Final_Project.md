@@ -48,7 +48,7 @@ This is the same as ```git reset --hard [upstream]```. There are many branch sce
 
 And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), which follows the same idea and a good tool for more picky maintainers.
 ### When to use it 
-Rebasing in the end product is not that different from the basic merge command. One of the biggest advantages of the rebasing is that it makes for a cleaner commit history. 
+Rebasing in the end product is not that different from the basic merge command. One of the biggest pro to using rebasing is as mentioned before, that it makes for a cleaner commit history by rewriting it to linear state even though the work was previously prallelaly.
 
 ## Cherry-Picking
 ### General idea of it
