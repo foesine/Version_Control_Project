@@ -49,11 +49,11 @@ And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), wh
 
 ## Cherry-Picking
 ### General idea of it
-Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them. We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. 
+Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them.  We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. This approach is in contrast to other methods, such as previously mentioned rebasing or merging, which typically involve the integration of multiple commits into another branch.
 ### Visual Representation 
 We suppose our project looks as following: 
 ![History before cherry pick](./pictures/cherry.png)
-*Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit ID> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like following : 
+ Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit ID> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like following : 
 ![History after cherry-picking a commit on a topic branch](./pictures/after_cherry.png)
 
 ### Options 
@@ -66,3 +66,7 @@ We suppose our project looks as following:
 - <a id="git-scm"></a> Git-rebase documentation. https://git-scm.com/docs/git-rebase; retrieved on 11/10/2023.
 
 - <a id="pro-git-book"></a> Chacon, S., & Straub, B. (2014). *Pro git*. Springer Nature.
+
+- <a id="git-scm2"></a> Git-cherry-pick documentation. https://git-scm.com/docs/git-cherry-pick; retrieved on 12/10/2023.
+
+<a id="geeks"></a> Git-cherry-pick. https://www.geeksforgeeks.org/git-cherry-pick/; retrieved on 12/10/2023.
