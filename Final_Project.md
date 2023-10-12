@@ -50,9 +50,9 @@ This is the same as ```git reset --hard [upstream]```. There are many branch sce
 
 And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), which follows the same idea and a good tool for more picky maintainers.
 ### When to use it 
-Rebasing in the end product is not that different from the basic merge command. One of the biggest pro to using rebasing is, as was mentioned before, that it makes for a cleaner commit history by rewriting it to linear state even though the work was previously done prallelaly. Other benefit coming from using rebasing is that it limits the commits that would be needed to merge the same changes, so again, it leaves the commit history much more clean. ([Chacon & Straub, 2014](#pro-git-book)). <br>
+Rebasing in the comparison of the end product, is not that different from the basic merge command. One of the biggest pro to using rebasing is, as it was mentioned before, that it makes for a cleaner commit history by rewriting it to linear state even though the work was previously done in parallel. Other benefit coming from using ```git rebase``` command is that it limits the commits that would be needed to merge the same changes, so again, it leaves the commit history much more clean. ([Chacon & Straub, 2014](#pro-git-book)). <br>
 ### When not to use it 
-The advantage of cleaner tree that rebasing provides could be also a negative point to why not to use it. While rebasing would be usefull to make the commit history more readable, if the need for the outcome is that the tree should be more presentable or easy to orient in, still there would be the loss of a real route that was taken to get to the final sate of the work.  With rebasing, problems might also occur when trying to rebase commits outside of the personal repository. Rebasing essentialy creates new slightly different commits which then pushed into the common repository can cause differences between coworkers commits history and shared repository cmmits history, leaving them with the only option to re-merge their work. ([Chacon & Straub, 2014](#pro-git-book)). <br>
+The advantage of cleaner tree that rebasing provides could be also the reason to why not to use it. While rebasing would be usefull to make the commit history more readable, if the need for the outcome is that the tree should be more presentable or easy to orient in, still there would be the loss of a real work path that was taken to get to the final sate of the work.  With rebasing, problems might also occur when trying to rebase commits outside of the personal repository. Rebasing essentialy creates new slightly different commits which then pushed into the common repository can cause differences between coworkers commits history and shared repository cmmits history, leaving them with the only option to re-merge their work. ([Chacon & Straub, 2014](#pro-git-book)). <br>
 
 ## Cherry-Picking
 ### General idea of it
@@ -74,15 +74,12 @@ For more  details about additional options available for the cherry-pick command
 
  
 
-### When to use it 
+### When to use it
 Cherry-picking whilst interesting feature requires thoughtful application. There are many possible uses for this command such as -for exemple-  work in team environments where precise coordination is essential. Cherry-picking enables workers to select specific commits and incorporate only the necessary changes. For instance, this practice can be usefull when rectifying accidental changes made to a wrong branch. ([Git-cherry-pick](#geeks))
-Another helpful application of ```git cherry-pick ``` is error correction, specifically adressing "bugs". This command makes the process of the fixes easier in a way, that it combines multiple git commands such as ```git show ```, committing process and branch switching into one single comand.Lastly, undoing certain changes or restoring lost commits can be also a useful function of cherry-pick comand. ([Git cherry pick](#Atlassian))
+Another helpful application of ```git cherry-pick ``` is error correction, specifically adressing "bugs". This command makes the process of the fixes easier in a way, that it combines multiple git commands such as ```git show ```, committing process and branch switching into one single comand. Lastly, undoing certain changes or restoring lost commits can be also a useful function of cherry-pick comand. ([Git cherry pick](#Atlassian))
 
 ### When to not use it
-As appealing as it may seem, there are ertain limitations to ```git cherry-pick``` command. Cherry-picking essetially creates two copies of the same commit. That being said, if one of the branches with the commit gets modified, it can potentially create challenges when attempting to merge these two branches in the future.  This issue might cause problems, especially while working on collaborative team projects,  thus highlighting that the very advantage of this command can be considered a drawback. ([Chen,2018](#devblogs))
-
-## Discussion and Conclusion
-
+As appealing as it may seem, there are certain limitations to ```git cherry-pick``` command. Cherry-picking essetially creates two copies of the same commit. That being said, if one of the branches with the commit gets modified, it can potentially create challenges when attempting to merge these two branches in the future.  This issue might cause problems, especially while working on collaborative team projects,  thus highlighting that the very advantage of this command can be considered a drawback. ([Chen, 2018](#devblogs))
 
 
 ## Sources
