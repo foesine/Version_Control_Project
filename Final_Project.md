@@ -13,17 +13,24 @@ Rebasing and cherry-picking come to use when the work has diverged and branches 
 
 ## Rebasing
 ### General idea of it
-The ```git rebase [basebranch]``` command takes all the commits of the currently checked out branch (topicbranch) and applies them on the basebranch, usually the master branch, which has to be specified in the command.
+
+### Example
+### When to use it 
+
+The ```git rebase <basebranch>``` command takes all the commits of the currently checked out branch (topicbranch) and applies them on the basebranch, usually the master branch, which has to be specified in the command.
 The rebase command finds the common anchestor of the two branches and finds the differences to this made on the topicbranch with each commit. These are temporarily stored, the topicbranch is then reset to the same commit as the basebranch and then the changes are applied to the basebranch. To have a clear linear commit history and the pointers to both point at the same commit, the basebranch has to be checked out and then a fast-forwad merge can be applied ([Chacon & Straub, 2014](#pro-git-book)).
 
 #### Visual representation
 ![.](./pictures/diverged_work_history.png)<br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.69</font>* <br>
 *This is what the initial situation might look like. C4 was commited on a seperate branch and now it should be applied to the master branch.* <br>
 
 ![.](./pictures/basic_rebase.png)<br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.69</font>* <br>
 *This is what the situation looks like after running the rebase command* <br>
 
 ![.](./pictures/basic_rebase_after_merge_ff.png) <br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.70</font>* <br>
 *This is the final history after the merge fast-forward.* <br>
 
 There will not be any difference between the files after the rebasing or the applying of the ```merge``` command. Only the git history will be different as the log history looks linear ([Chacon & Straub, 2014](#pro-git-book)). 
@@ -32,20 +39,20 @@ A neccessity for rebasing is to have a branch checked out and a configured upstr
 
 
 There are some additional arguments that can be applied to the ```rebase``` command. <br>
-Running ``` git rebase [basebranch] [topicbranch]``` the topicbranch does not have to be checked out initially. <br>
+Running ``` git rebase <basebranch> <topicbranch>``` the topicbranch does not have to be checked out initially. <br>
 Problematic commits will cause git to report a merge conflict which can be resolved manually and then one has the option to ```rebase --continue``` or ```rebase --abort``` ([Git-rebase documentation](#git-scm)). <br>
-After a topicbranch was rebased, the information is integrated on the basebranch and if the topicbranch is not used anymore it can be deleted with ```git branch -d [topicbranch]```.
+After a topicbranch was rebased, the information is integrated on the basebranch and if the topicbranch is not used anymore it can be deleted with ```git branch -d <topicbranch>```.
 
 If there are multiple branches and the topicbranch does not have a direct common anchestor with the basebranch as it is branching out from a further branch, then ```--onto``` can be used ([Chacon & Straub, 2014](#pro-git-book)).
+
 #### Visual representation
 ![.](./pictures/rebasing_topic_off_another_topic.png)<br>
+*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.71</font>* <br>
 *This is the client branch (commits C8 and C9) rebased onto the master branch (commits C8' and C9'). The command used for this is  ```git rebase --onto master server client``` ([Chacon & Straub, 2014](#pro-git-book))*. <br>
 
-This is the same as ```git reset --hard [upstream]```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
+This is the same as ```git reset --hard <upstream>```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
 
 And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), which follows the same idea and a good tool for more picky maintainers.
-
-### Advantage
 
 ## Cherry-Picking
 ### General idea of it
@@ -66,8 +73,13 @@ Another usefull option is ```-e``` or ```--edit``` when we want to edit the comm
 
  
 
-### Advantage
+### When to use it 
+Cherry-picking whilst interesting feature is a practice that needs to find a proper place to be used. There are few possible uses for this command such as -for exemple-  work in teams where tight collaboration needs to take place. Cherry-picking enables workers to pick a selected commit and proceed with only certain changes. This can be usefull for exemple when accidentaly making changes to a wrong branch.
+Other possible use for cherry-picking is when some mistakes, in other words "bugs" needs to be fixed. This command makes the process of the fixes easier in a way, that it combines multiple git commands such as git show and process of committing and checking out and going from one branch to another to fix the problems into one singe cherry-pick commit.
+Last but not least undoing certain changes or restoring lost commits can be provided by the use of cherry-picking. Using other git comands and the knowledge that git stores these data we can easily revive the data. 
 
+### When to not use it
+As glamurous as it sounds, there are some things that needs to be taken into consideration while cherry-picking. Cherry-picking essetially creates two copies of one commit. That being said, if one of the branches with the commit gets modified, it can lead to a bigger future problem when somebody would try to merge the two branches. 
 
 ## Sources
 - <a id="cherry_picking_code_commits"></a>Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
@@ -81,5 +93,6 @@ Another usefull option is ```-e``` or ```--edit``` when we want to edit the comm
 - <a id="git-scm"></a> Git-rebase documentation. https://git-scm.com/docs/git-rebase; retrieved on 11/10/2023.
 
 - Perschbacher,B. (2010) *Hopefully Interesting Git Topics.*
+
 
 
