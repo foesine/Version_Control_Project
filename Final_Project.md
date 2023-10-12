@@ -13,6 +13,10 @@ Rebasing and cherry-picking come to use when the work has diverged and branches 
 
 ## Rebasing
 ### General idea of it
+<<<<<<< HEAD
+### Example
+### When to use it 
+=======
 The ```git rebase [basebranch]``` command takes all the commits of the currently checked out branch (topicbranch) and applies them on the basebranch, usually the master branch, which has to be specified in the command.
 The rebase command finds the common anchestor of the two branches and finds the differences to this made on the topicbranch with each commit. These are temporarily stored, the topicbranch is then reset to the same commit as the basebranch and then the changes are applied to the basebranch. To have a clear linear commit history and the pointers to both point at the same commit, the basebranch has to be checked out and then a fast-forwad merge can be applied ([Chacon & Straub, 2014](#pro-git-book)).
 
@@ -49,8 +53,6 @@ This is the same as ```git reset --hard [upstream]```. There are many branch sce
 
 And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), which follows the same idea and a good tool for more picky maintainers.
 
-### Advantage
-
 ## Cherry-Picking
 ### General idea of it
 Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them.  We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. This approach is in contrast to other methods, such as previously mentioned rebasing or merging, which typically involve the integration of multiple commits into another branch.
@@ -66,8 +68,10 @@ Each <commit-hash> represents the SHA-1 hash of the commit we want to apply. Add
 We can also cherry-pick multiple commits. To do so, after the ``` git cherry-pick``` command we list their commit hashes sequentially : ``` git cherry-pick <commit-hash-1> <commit-hash-2> <commit-hash-3> ```
  
 
-### Advantage
-
+### When to do use it 
+Cherry-picking whilst interesting feature is a practice that needs to find a proper place to be used. There are few possible uses for this command such as -for exemple-  work in teams where tight collaboration needs to take place. Cherry-picking enables workers to pick a selected commit and proceed with only certain changes. 
+Other possible use for cherry-picking is when some mistakes, in other words "bugs" needs to be fixed. This command makes the process of the fixes easier in a way, that the new commit can be cherry-picked right onto main branch, before more damage is done.
+Last but not least undoing certain changes or restoring lost commits can be provided by the use of cherry-picking. Using other git comands and the knowledge that git stores these data we can easily revive the data. 
 
 ## Sources
 - <a id="cherry picking of code commits"></a>Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
@@ -79,5 +83,6 @@ We can also cherry-pick multiple commits. To do so, after the ``` git cherry-pic
 - <a id="git-scm2"></a> Git-cherry-pick documentation. https://git-scm.com/docs/git-cherry-pick; retrieved on 12/10/2023.
 
 - <a id="geeks"></a> Git-cherry-pick. https://www.geeksforgeeks.org/git-cherry-pick/; retrieved on 12/10/2023.
+
 
 
