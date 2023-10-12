@@ -53,10 +53,14 @@ Cherry-picking is a proccess to manually pick commints from one branch and intro
 ### Visual Representation 
 We suppose our project looks as following: 
 ![History before cherry pick](./pictures/cherry.png)
- Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit ID> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like following : 
+ Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit hash> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like following : 
 ![History after cherry-picking a commit on a topic branch](./pictures/after_cherry.png)
 
+Each <commit-hash> represents the SHA-1 hash of the commit we want to apply. Additionally, while using this command, we have to make sure we are on the branch we want to apply the commit to. 
+
 ### Options 
+We can also cherry-pick multiple commits. To do so, after the ``` git cherry-pick``` command we list their commit hashes sequentially : ``` git cherry-pick <commit-hash-1> <commit-hash-2> <commit-hash-3> ```
+ 
 
 ### Advantage
 
@@ -69,4 +73,4 @@ We suppose our project looks as following:
 
 - <a id="git-scm2"></a> Git-cherry-pick documentation. https://git-scm.com/docs/git-cherry-pick; retrieved on 12/10/2023.
 
-<a id="geeks"></a> Git-cherry-pick. https://www.geeksforgeeks.org/git-cherry-pick/; retrieved on 12/10/2023.
+- <a id="geeks"></a> Git-cherry-pick. https://www.geeksforgeeks.org/git-cherry-pick/; retrieved on 12/10/2023.
