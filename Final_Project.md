@@ -17,13 +17,13 @@ The ```git rebase [basebranch]``` command takes all the commits of the currently
 The rebase command finds the common anchestor of the two branches and finds the differences to this made on the topicbranch with each commit. These are temporarily stored, the topicbranch is then reset to the same commit as the basebranch and then the changes are applied to the basebranch. To have a clear linear commit history and the pointers to both point at the same commit, the basebranch has to be checked out and then a fast-forwad merge can be applied ([Chacon & Straub, 2014](#pro-git-book)).
 
 #### Visual representation
-![.](./pictures/diverged_work_history.png)
+![.](./pictures/diverged_work_history.png)<br>
 *This is what the initial situation might look like. C4 was commited on a seperate branch and now it should be applied to the master branch.* <br>
 
-![.](./pictures/basic_rebase.png)
+![.](./pictures/basic_rebase.png)<br>
 *This is what the situation looks like after running the rebase command* <br>
 
-![.](./pictures/basic_rebase_after_merge_ff.png)
+![.](./pictures/basic_rebase_after_merge_ff.png) <br>
 *This is the final history after the merge fast-forward.* <br>
 
 There will not be any difference between the files after the rebasing or the applying of the ```merge``` command. Only the git history will be different as the log history looks linear ([Chacon & Straub, 2014](#pro-git-book)). 
@@ -38,7 +38,7 @@ After a topicbranch was rebased, the information is integrated on the basebranch
 
 If there are multiple branches and the topicbranch does not have a direct common anchestor with the basebranch as it is branching out from a further branch, then ```--onto``` can be used ([Chacon & Straub, 2014](#pro-git-book)).
 #### Visual representation
-![.](./pictures/rebasing_topic_off_another_topic.png)
+![.](./pictures/rebasing_topic_off_another_topic.png)<br>
 *This is the client branch (commits C8 and C9) rebased onto the master branch (commits C8' and C9'). The command used for this is  ```git rebase --onto master server client``` ([Chacon & Straub, 2014](#pro-git-book))*. <br>
 
 This is the same as ```git reset --hard [upstream]```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
@@ -52,9 +52,9 @@ And similar to rebasing, there exists also [Cherry-picking](#cherry-picking), wh
 Cherry-picking is a proccess to manually pick commints from one branch and introduce them from another branch. This feature is particularly usefull if we have a number of commits on the topic branch and we want to integrate only one of them.  We use the ```git cherry-pick``` command to take the changes introduced in a single Git commit and try to re-introduce it as a new commit on the branch we are currently on. This approach is in contrast to other methods, such as previously mentioned rebasing or merging, which typically involve the integration of multiple commits into another branch.
 ### Visual Representation 
 We suppose our project looks as following: 
-![History before cherry pick](./pictures/cherry.png)
- Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit hash> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like following : 
-![History after cherry-picking a commit on a topic branch](./pictures/after_cherry.png)
+![History before cherry pick](./pictures/cherry.png)<br>
+Now, if we want to pull, for example, the commit e43a6 into our master branch we can use ``` git cherry-pick <commit hash> ``` , which, assuming there are no conflicts, pulls the same change introduced in e43a6, but we get a new commit SHA-1 value and our history will look like following:
+![History after cherry-picking a commit on a topic branch](./pictures/after_cherry.png)<br>
 
 Each <commit-hash> represents the SHA-1 hash of the commit we want to apply. Additionally, while using this command, we have to make sure we are on the branch we want to apply the commit to. 
 
@@ -66,7 +66,7 @@ We can also cherry-pick multiple commits. To do so, after the ``` git cherry-pic
 
 
 ## Sources
-- <a id="cherry picking of code commits"></a> Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
+- <a id="cherry picking of code commits"></a>Bunyakiati, P., & Phipathananunth, C. (2017). *Cherry-Picking of Code Commits in Long-Running, Multi-release Software*. In Proceedings of 2017 11th Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering. 
 
 - <a id="pro-git-book"></a> Chacon, S., & Straub, B. (2014). *Pro git*. Springer Nature.
 
