@@ -18,15 +18,15 @@ The rebase command finds the common anchestor of the two branches and finds the 
 
 #### Visual representation
 ![.](./pictures/diverged_work_history.png)<br>
-*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.69</font>* <br>
+*<font size="1"> Picture from [Chacon & Straub, 2014, p.69](#pro-git-book)</font>* <br>
 *This is what the initial situation might look like. C4 was commited on a seperate branch and now it should be applied to the master branch.* <br>
 
 ![.](./pictures/basic_rebase.png)<br>
-*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.69</font>* <br>
+*<font size="1"> Picture from [Chacon & Straub, 2014, p.69](#pro-git-book)</font>* <br>
 *This is what the situation looks like after running the rebase command.* <br>
 
 ![.](./pictures/basic_rebase_after_merge_ff.png) <br>
-*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.70</font>* <br>
+*<font size="1"> Picture from [Chacon & Straub, 2014, p.70](#pro-git-book)</font>* <br>
 *This is the final history after the merge fast-forward.* <br>
 
 There will not be any difference between the files after the rebasing or the applying of the ```merge``` command. Only the git history will be different as the log history looks linear ([Chacon & Straub, 2014](#pro-git-book)). 
@@ -42,7 +42,7 @@ After a topicbranch was rebased, the information is integrated on the basebranch
 If there are multiple branches and the topicbranch does not have a direct common anchestor with the basebranch as it is branching out from a further branch, then ```--onto``` can be used ([Chacon & Straub, 2014](#pro-git-book)).
 #### Visual representation
 ![.](./pictures/rebasing_topic_off_another_topic.png)<br>
-*<font size="1"> Picture from [Chacon & Straub, 2014](#pro-git-book) p.71</font>* <br>
+*<font size="1"> Picture from [Chacon & Straub, 2014, p.71](#pro-git-book)</font>* <br>
 *This is the client branch (commits C8 and C9) rebased onto the master branch (commits C8' and C9'). The command used for this is  ```git rebase --onto master server client``` ([Chacon & Straub, 2014](#pro-git-book))*. <br>
 
 This is the same as ```git reset --hard <upstream>```. There are many branch scenarios in which ```--onto``` can be used, for more see the [Git-rebase documentation](#git-scm).
